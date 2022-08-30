@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Gotapp</string>
+    <string name="login">Login</string>
+    <string name="registrarse">Registrarse</string>
+    <string name="usuario">Usuario</string>
+    <string name="pass">Contrasena</string>
+    <string name="usuario_hint">Escriba su usuario</string>
+    <string name="pass_hint">Escriba su contrasena</string>
+    <string name="pass_repetir_hint">Repita su contrasena</string>
+    <string name="personajes">Personajes</string>
+    <string name="casas">Casas</string>
+    <string name="libros">Libros</string>
+</resources>
