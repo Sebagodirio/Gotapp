@@ -6,22 +6,24 @@
     android:layout_height="match_parent"
     tools:context=".RegistrarseActivity"
     android:background="@drawable/gotbkg"
+    android:gravity="center"
     android:orientation="vertical">
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="57dp"
+        android:layout_height="wrap_content"
         android:hint="@string/usuario_hint"
         android:textColor="@color/white"
-        android:textColorHint="@color/white"/>
+        android:layout_margin="15sp"
+        />
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="63dp"
-        android:layout_marginBottom="112dp"
+        android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/pass_hint"
-        android:textColorHint="@color/white"/>
+        android:layout_margin="15sp"
+        />
 
     <EditText
         android:layout_width="match_parent"
@@ -29,17 +31,16 @@
         android:layout_marginBottom="112dp"
         android:ems="10"
         android:hint="@string/pass_repetir_hint"
-        android:textColorHint="@color/white" />
+        android:layout_margin="15sp"
+       />
 
     <Button
         android:id="@+id/btn_registrarse_form"
-        android:layout_width="match_parent"
+        android:layout_width="217dp"
         android:layout_height="wrap_content"
         android:text="@string/registrarse"
-        tools:layout_conversion_absoluteHeight="366dp"
-        tools:layout_conversion_absoluteWidth="136dp"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="366dp" />
+        android:layout_marginTop="20sp"
+        android:backgroundTint="@color/red"/>
 
 
 </LinearLayout>

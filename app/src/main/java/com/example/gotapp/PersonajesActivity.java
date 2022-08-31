@@ -5,22 +5,22 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+import android.widget.LinearLayout;
 
-public class LoginActivity extends AppCompatActivity {
+public class PersonajesActivity extends AppCompatActivity {
 
-    private Button loginBtn;
+    private LinearLayout clickExample;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_personajes);
 
-        loginBtn = findViewById(R.id.btn_login_form);
-        loginBtn.setOnClickListener(new View.OnClickListener() {
+        clickExample = findViewById(R.id.example_layout);
+        clickExample.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LoginActivity.this, HomePage.class);
+                Intent intent = new Intent(PersonajesActivity.this, PersonajeActivity.class);
                 startActivity(intent);
             }
         });
