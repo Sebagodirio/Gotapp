@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".PersonajeActivity">
+
+    <ImageView
+        android:id="@+id/item_image"
+        android:layout_width="match_parent"
+        android:layout_height="347dp"
+        android:background="@drawable/gotbkg"
+        android:importantForAccessibility="no"
+        android:scaleType="centerCrop" />
+
+    <TextView
+        android:id="@+id/tv_nombre_full"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_weight="10"
+        android:gravity="center"
+        android:text="Myke Something"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_genero"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_margin="5sp"
+        android:layout_weight="10"
+        android:gravity="start"
+        android:text="@string/genero"
+        android:textAlignment="textStart"
+        android:textSize="18sp"
+        android:textStyle="italic" />
+
+    <TextView
+        android:id="@+id/tv_nacimiento"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_margin="5sp"
+        android:layout_weight="10"
+        android:gravity="start"
+        android:text="@string/fechaDeNacimiento"
+        android:textAlignment="textStart"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tv_cultura"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_margin="5sp"
+        android:layout_weight="10"
+        android:gravity="start"
+        android:text="@string/cultura"
+        android:textAlignment="textStart"
+        android:textSize="18sp" />
+
+</LinearLayout>

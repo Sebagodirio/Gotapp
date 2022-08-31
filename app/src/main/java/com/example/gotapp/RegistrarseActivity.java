@@ -20,9 +20,8 @@ public class RegistrarseActivity extends AppCompatActivity {
         registrarseBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(RegistrarseActivity.this, HomePage.class);
+                Intent intent = new Intent(RegistrarseActivity.this, LoginActivity.class);
                 startActivity(intent);
-                finish();
             }
         });
     }

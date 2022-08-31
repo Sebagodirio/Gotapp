@@ -10,4 +10,8 @@
     <string name="personajes">Personajes</string>
     <string name="casas">Casas</string>
     <string name="libros">Libros</string>
+    <string name="personajesTitulo">Personajes de GOT</string>
+    <string name="genero">Genero:</string>
+    <string name="fechaDeNacimiento">Fecha de nacimiento:</string>
+    <string name="cultura">Cultura:</string>
 </resources>
