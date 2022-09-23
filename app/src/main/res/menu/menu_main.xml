@@ -5,5 +5,12 @@
         android:id="@+id/volver"
         android:title="@string/volver"
         app:showAsAction="always"
+        android:icon="@drawable/ic_baseline_home_24"
+        />
+    <item
+        android:id="@+id/logout"
+        android:title="@string/volver"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_baseline_south_west_24"
         />
 </menu>
