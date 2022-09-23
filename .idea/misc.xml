@@ -7,8 +7,10 @@
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_personaje.xml" value="0.2" />
-        <entry key="app/src/main/res/layout/activity_personajes.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_personajes.xml" value="0.21" />
         <entry key="app/src/main/res/layout/activity_registrarse.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/toolbar_principal.xml" value="0.19270833333333334" />
+        <entry key="app/src/main/res/menu/menu_main.xml" value="0.22" />
       </map>
     </option>
   </component>

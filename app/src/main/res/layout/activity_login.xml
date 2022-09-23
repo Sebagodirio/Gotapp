@@ -9,6 +9,11 @@
     android:gravity="center"
     tools:context=".LoginActivity">
 
+    <include
+        android:id="@+id/main_toolbar"
+        layout="@layout/toolbar_principal"
+         />
+
     <EditText
         android:id="@+id/et_usuario"
         android:layout_width="match_parent"
