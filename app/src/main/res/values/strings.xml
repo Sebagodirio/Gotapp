@@ -14,4 +14,5 @@
     <string name="genero">Genero:</string>
     <string name="fechaDeNacimiento">Fecha de nacimiento:</string>
     <string name="cultura">Cultura:</string>
+    <string name="volver">Volver</string>
 </resources>

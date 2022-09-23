@@ -7,6 +7,13 @@
     android:orientation="vertical"
     tools:context=".PersonajesActivity">
 
+    <include
+        android:id="@+id/main_toolbar"
+        layout="@layout/toolbar_principal"
+        />
+
+
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -20,82 +27,14 @@
         android:layout_height="700dp"
         android:weightSum= "1"
         >
-        <LinearLayout
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_personajes"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:id="@+id/example_layout">
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="347dp"
-                android:background="@drawable/gotbkg"
-                android:importantForAccessibility="no"
-                android:scaleType="centerCrop" />
-
-            <TextView
-                android:id="@+id/tv_nombre_full"
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:layout_weight="10"
-                android:gravity="center"
-                android:text="Myke Something"
-                android:textAlignment="center"
-                android:textSize="34sp"
-                android:textStyle="bold" />
-
-            <ImageView
-                android:id="@+id/item_image"
-                android:layout_width="match_parent"
-                android:layout_height="347dp"
-                android:background="@drawable/gotbkg"
-                android:importantForAccessibility="no"
-                android:scaleType="centerCrop" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:layout_weight="10"
-                android:gravity="center"
-                android:text="Myke Something"
-                android:textAlignment="center"
-                android:textSize="34sp"
-                android:textStyle="bold" />
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="347dp"
-                android:background="@drawable/gotbkg"
-                android:importantForAccessibility="no"
-                android:scaleType="centerCrop" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:layout_weight="10"
-                android:gravity="center"
-                android:text="Myke Something"
-                android:textAlignment="center"
-                android:textSize="34sp"
-                android:textStyle="bold" />
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="347dp"
-                android:background="@drawable/gotbkg"
-                android:importantForAccessibility="no"
-                android:scaleType="centerCrop" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:layout_weight="10"
-                android:gravity="center"
-                android:text="Myke Something"
-                android:textAlignment="center"
-                android:textSize="34sp"
-                android:textStyle="bold" />
-
-        </LinearLayout>
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:itemCount="4"
+            tools:listitem="@layout/activity_personaje" />
     </ScrollView>
 
 
