@@ -10,7 +10,7 @@ import com.j256.ormlite.table.TableUtils;
 
 public class DBHelper extends OrmLiteSqliteOpenHelper {
 
-    private static final String NOMBRE_BDD = "bdd_examenes";
+    private static final String NOMBRE_BDD = "bdd_gotapp";
     private static final int VERSION_BDD = 1;
 
     public DBHelper(Context context) {

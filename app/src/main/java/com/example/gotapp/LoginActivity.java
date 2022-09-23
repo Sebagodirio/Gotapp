@@ -7,11 +7,15 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.SQLException;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import java.util.List;
+import java.util.Objects;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -37,9 +41,9 @@ public class LoginActivity extends AppCompatActivity {
         String usuarioGuardado = prefs.getString(Constantes.USUARIO, null);
         String passGuardada = prefs.getString(Constantes.PASSWORD, null);
         
-//        if(usuarioGuardado != null && passGuardada != null){
-//            irAHomePage();
-//        }
+        if(usuarioGuardado != null && passGuardada != null){
+            irAHomePage();
+        }
         
 
         loginBtn = findViewById(R.id.btn_login_form);
@@ -72,12 +76,19 @@ public class LoginActivity extends AppCompatActivity {
             editor.apply();
         }
         try {
-            Integer usuarioTieneAcceso = LoginManager.getInstancia(this).getLogin(usuario, password);
-            if(usuarioTieneAcceso > 0){
-                irAHomePage();
-            } else {
+            List<Login> loginList= LoginManager.getInstancia(this).getLogin(usuario, password);
+            Boolean existe = false;
+            for (int i = 0; i < loginList.size(); i++) {
+                if(Objects.equals(loginList.get(i).getUsuario(), usuario) && Objects.equals(loginList.get(i).getPassword(), password)) {
+                    existe = true;
+                    irAHomePage();
+                    finish();
+                }
+            }
+            if(!existe) {
                 Toast.makeText(LoginActivity.this, "Credenciales incorrectas", Toast.LENGTH_SHORT).show();
             }
+
         } catch (SQLException | java.sql.SQLException e) {
             e.printStackTrace();
         }

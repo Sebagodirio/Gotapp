@@ -2,10 +2,13 @@ package com.example.gotapp;
 
 import android.content.Context;
 import android.database.SQLException;
+import android.util.Log;
 
 import com.j256.ormlite.android.apptools.OpenHelperManager;
 import com.j256.ormlite.android.apptools.OrmLiteSqliteOpenHelper;
 import com.j256.ormlite.dao.Dao;
+
+import java.util.List;
 
 public class LoginManager {
     private static LoginManager instancia;
@@ -35,8 +38,9 @@ public class LoginManager {
         return instancia;
     }
 
-    public int getLogin(String usuario, String password) throws Exception {
-        return dao.executeRaw("SELECT usuario, password WHERE usuario =" + usuario + "AND password=" + password + "LIMIT 1");
+    public List<Login> getLogin(String usuario, String password) throws Exception {
+        Log.i("a",dao.queryForAll().get(0).getUsuario());
+        return dao.queryForAll();
     }
 
     public void agregarLogin(Login login) throws Exception {
