@@ -10,6 +10,7 @@
     android:orientation="vertical">
 
     <EditText
+        android:id="@+id/etr_usuario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/usuario_hint"
@@ -18,6 +19,7 @@
         />
 
     <EditText
+        android:id="@+id/etr_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -26,6 +28,7 @@
         />
 
     <EditText
+        android:id="@+id/etr_password_repetida"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="112dp"
