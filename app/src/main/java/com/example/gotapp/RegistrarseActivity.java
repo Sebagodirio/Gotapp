@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class RegistrarseActivity extends AppCompatActivity {
 
@@ -25,15 +26,18 @@ public class RegistrarseActivity extends AppCompatActivity {
         etPassword = findViewById(R.id.etr_password);
         etPasswordRepetida = findViewById(R.id.etr_password_repetida);
 
-        String usuario = etUsuario.getText().toString();
-        String password = etPassword.getText().toString();
-
         registrarseBtn = findViewById(R.id.btn_registrarse_form);
         registrarseBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Login login = new Login();
+                login.setUsuario(etUsuario.getText().toString());
+                login.setPassword(etPassword.getText().toString());
                 try {
-                    registrar(usuario, password);
+                    LoginManager.getInstancia(RegistrarseActivity.this).agregarLogin(login);
+                    etUsuario.setText("");
+                    etPassword.setText("");
+                    Toast.makeText(RegistrarseActivity.this, "Usuario creado correctamente", Toast.LENGTH_SHORT).show();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -41,14 +45,5 @@ public class RegistrarseActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-    }
-
-    private void registrar(String usuario, String password) throws Exception {
-        Login login = new Login( usuario, password);
-        try {
-            LoginManager.getInstancia(this).agregarLogin(login);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
     }
 }

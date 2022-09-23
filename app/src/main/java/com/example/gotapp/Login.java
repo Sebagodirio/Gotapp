@@ -12,6 +12,8 @@ public class Login {
     @DatabaseField
     private String password;
 
+    public Login() {}
+
     public Login(String usuario, String password) {
         this.usuario = usuario;
         this.password = password;
