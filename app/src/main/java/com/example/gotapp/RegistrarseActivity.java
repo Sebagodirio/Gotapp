@@ -1,6 +1,7 @@
 package com.example.gotapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.database.SQLException;
@@ -16,11 +17,16 @@ public class RegistrarseActivity extends AppCompatActivity {
     private EditText etPassword;
     private EditText etPasswordRepetida;
     private Button registrarseBtn;
+    private Toolbar mainToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registrarse);
+
+        mainToolbar = findViewById(R.id.main_toolbar);
+        setSupportActionBar(mainToolbar);
+        getSupportActionBar().setTitle("Game of Thrones");
 
         etUsuario = findViewById(R.id.etr_usuario);
         etPassword = findViewById(R.id.etr_password);

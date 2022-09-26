@@ -6,39 +6,46 @@
     android:layout_height="match_parent"
     android:background="@drawable/gotbkg"
     android:orientation="vertical"
-    android:gravity="center"
     tools:context=".LoginActivity">
 
     <include
         android:id="@+id/main_toolbar"
         layout="@layout/toolbar_principal" />
 
-    <EditText
-        android:id="@+id/et_usuario"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/usuario"
-        android:textColor="@color/white" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
 
-    <EditText
-        android:id="@+id/et_pass"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/pass"
-        android:textColor="@color/white"
-        />
+        <EditText
+            android:id="@+id/et_usuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/usuario"
+            android:textColor="@color/white" />
 
-    <Button
-        android:id="@+id/btn_login_form"
-        android:layout_width="215dp"
-        android:layout_height="wrap_content"
-        android:text="@string/login"
-        android:layout_marginTop="20dp"
-        android:backgroundTint="@color/red"/>
+        <EditText
+            android:id="@+id/et_pass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/pass"
+            android:textColor="@color/white"
+            />
 
-    <CheckBox
-        android:id="@+id/cb_recordar_usuario"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        />
+        <Button
+            android:id="@+id/btn_login_form"
+            android:layout_width="215dp"
+            android:layout_height="wrap_content"
+            android:text="@string/login"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/red"/>
+        <CheckBox
+            android:id="@+id/cb_recordar_usuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+    </LinearLayout>
+
+
 </LinearLayout>
