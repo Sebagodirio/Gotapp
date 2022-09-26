@@ -9,8 +9,8 @@
         />
     <item
         android:id="@+id/logout"
-        android:title="@string/volver"
+        android:title="@string/logout"
         app:showAsAction="always"
-        android:icon="@drawable/ic_baseline_south_west_24"
+        android:icon="@drawable/ic_baseline_close_24"
         />
 </menu>
