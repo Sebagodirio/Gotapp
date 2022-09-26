@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,15 +12,19 @@
 
     <include
         android:id="@+id/main_toolbar"
-        layout="@layout/toolbar_principal"
-        />
+        layout="@layout/toolbar_principal" />
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="314dp"
+    />
     <Button
         android:id="@+id/btn_personajes"
         android:layout_width="228dp"
         android:layout_height="60dp"
+        android:backgroundTint="@color/red"
         android:text="@string/personajes"
-        android:backgroundTint="@color/red"/>
+         />
 
     <Button
         android:id="@+id/btn_casas"

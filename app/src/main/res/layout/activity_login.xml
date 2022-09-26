@@ -11,8 +11,7 @@
 
     <include
         android:id="@+id/main_toolbar"
-        layout="@layout/toolbar_principal"
-         />
+        layout="@layout/toolbar_principal" />
 
     <EditText
         android:id="@+id/et_usuario"

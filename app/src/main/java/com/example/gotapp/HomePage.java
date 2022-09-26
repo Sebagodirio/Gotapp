@@ -15,7 +15,7 @@ public class HomePage extends AppCompatActivity {
     private Button personajesBtn;
     private Toolbar mainToolbar;
 
-    @Override
+   /* @Override
     public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return super.onCreateOptionsMenu(menu);
@@ -23,11 +23,12 @@ public class HomePage extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId() == R.id.volver) {
-            Intent intent = new Intent(HomePage.this, PersonajesActivity.class);
+            Intent intent = new Intent(HomePage.this, HomePage.class);
             startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
-    }
+    }*/ //Tenerlo en el Main no me parece conveniente, asi que lo puse en las paginas que lo usemos
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
