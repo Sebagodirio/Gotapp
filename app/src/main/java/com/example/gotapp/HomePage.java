@@ -4,11 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class HomePage extends AppCompatActivity {
 
@@ -23,7 +25,17 @@ public class HomePage extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId() == R.id.volver) {
-            Intent intent = new Intent(HomePage.this, PersonajesActivity.class);
+            Intent intent = new Intent(HomePage.this, LoginActivity.class);
+            startActivity(intent);
+        }
+        if(item.getItemId() == R.id.logout) {
+            SharedPreferences prefs = getApplicationContext().getSharedPreferences(Constantes.SP_CREDENCIALES, MODE_PRIVATE);
+            SharedPreferences.Editor editor = prefs.edit();
+            editor.putString(Constantes.USUARIO, null);
+            editor.putString(Constantes.PASSWORD, null);
+            editor.apply();
+            Toast.makeText(HomePage.this, "Usuario deslogueado con exito", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(HomePage.this, MainActivity.class);
             startActivity(intent);
         }
         return super.onOptionsItemSelected(item);

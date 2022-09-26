@@ -9,41 +9,50 @@
     android:gravity="center"
     android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/etr_usuario"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/usuario_hint"
-        android:textColor="@color/white"
-        android:layout_margin="15sp"
+    <include
+        android:id="@+id/main_toolbar"
+        layout="@layout/toolbar_principal"
         />
 
-    <EditText
-        android:id="@+id/etr_password"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/pass_hint"
-        android:layout_margin="15sp"
-        />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+        <EditText
+            android:id="@+id/etr_usuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/usuario_hint"
+            android:textColor="@color/white"
+            android:layout_margin="15sp"
+            />
 
-    <EditText
-        android:id="@+id/etr_password_repetida"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="112dp"
-        android:ems="10"
-        android:hint="@string/pass_repetir_hint"
-        android:layout_margin="15sp"
-       />
+        <EditText
+            android:id="@+id/etr_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/pass_hint"
+            android:layout_margin="15sp"
+            />
 
-    <Button
-        android:id="@+id/btn_registrarse_form"
-        android:layout_width="217dp"
-        android:layout_height="wrap_content"
-        android:text="@string/registrarse"
-        android:layout_marginTop="20sp"
-        android:backgroundTint="@color/red"/>
+        <EditText
+            android:id="@+id/etr_password_repetida"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="112dp"
+            android:ems="10"
+            android:hint="@string/pass_repetir_hint"
+            android:layout_margin="15sp"
+            />
 
-
+        <Button
+            android:id="@+id/btn_registrarse_form"
+            android:layout_width="217dp"
+            android:layout_height="wrap_content"
+            android:text="@string/registrarse"
+            android:layout_marginTop="20sp"
+            android:backgroundTint="@color/red"/>
+    </LinearLayout>
 </LinearLayout>
