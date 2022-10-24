@@ -2,25 +2,28 @@ package com.example.gotapp
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.example.gotapp.PersonajeAdapter
-import com.example.gotapp.R
 import android.content.Intent
-import com.example.gotapp.HomePage
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.widget.Toolbar
-import com.example.gotapp.Personaje
-import retrofit2.Call
-import retrofit2.Callback
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.gotapp.databinding.ActivityPersonajesBinding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import retrofit2.Response
 import java.util.ArrayList
 
 class PersonajesActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityPersonajesBinding
     private lateinit var rvPersonajes: RecyclerView
     var adapter: PersonajeAdapter? = null
     private var mainToolbar: Toolbar? = null
+
+    private val personajesImagenes = mutableListOf<String>()
+
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
         return super.onCreateOptionsMenu(menu)
@@ -41,56 +44,57 @@ class PersonajesActivity : AppCompatActivity() {
         mainToolbar = findViewById(R.id.main_toolbar)
         setSupportActionBar(mainToolbar)
         supportActionBar!!.title = "Game of Thrones"
+        initRecyclerView()
     }
 
-    private fun setUpAdapter() {
+    private fun initRecyclerView(){
+        adapter = PersonajeAdapter(personajesImagenes)
+        binding.rvPersonajes.layoutManager = LinearLayoutManager(this)
+        binding.rvPersonajes.adapter = adapter
+
+
+    }
+
+  /*  private fun setUpAdapter() {
         rvPersonajes = findViewById(R.id.rv_personajes)
         adapter = PersonajeAdapter(personajes)
         rvPersonajes.setAdapter(adapter)
-    }
+    }*/
 
 
-    private fun personajesGet(): ArrayList<Personaje?> {
-        val api = RetrofitClient.retrofit.create(GotApi::class.java)
-        val callGetCharacter =api.getCharacters()
-
-
-        callGetCharacter.enqueue(object : retrofit2.Callback<List<Personaje>> {
-            override fun onResponse(
-                call: Call<List<Personaje>>,
-                response: Response<List<Personaje>>
-            ) {
-                val personajesres = response?.body()
-
-                if (personajesres != null) {
-                    for (personaje in personajesres) {
-                        personajes.add(
-                            Personaje(
-                                personaje.id,
-                                personaje.imagen,
-                                personaje.nombre,
-                                personaje.genero,
-                                personaje.nacimiento,
-                                personaje.cultura
-                            )
-                        )
-                    }
+    private fun personajesGet(){
+        CoroutineScope(Dispatchers.IO).launch {
+            val call: Response<List<PersonajesResponse>> = RetrofitClient.retrofit.create(GotApi::class.java).getCharacters()
+            val characters: List<PersonajesResponse>? =  call.body()
+            var aux: PersonajesResponse ?=null
+            if (characters != null) {
+                for(s in characters){
+                    aux = s
                 }
+            }
+            runOnUiThread{
+                if(call.isSuccessful){
+                    //TODO
+                    Log.i("Characters", characters.toString())
+                    val images : String? = aux?.url
 
+
+                }else{
+                    Log.i("Error","Error")
+
+                }
             }
 
 
 
-            override fun onFailure(call: Call<List<Personaje>>, t: Throwable) {
-                Log.e("Error", t.message ?:" ")
-                t?.printStackTrace()
-            }
+        }
 
-        })
-        return personajes
     }
 
 
 
-    private val personajes: ArrayList<Personaje?> = personajesGet()
+    private val personajes: ArrayList<Personaje?>
+        get() {
+            TODO()
+        }
 }
